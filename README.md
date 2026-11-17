@@ -27,40 +27,10 @@ I enjoy experimenting with emerging technologies and building practical applicat
 
 ## Featured Work
 
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <p><sub>01 · DIGITAL TWINS &amp; OPERATIONS</sub></p>
-      <h3>AI Stadium OS</h3>
-      <p>A stadium operations platform combining digital twin views, crowd monitoring, incident workflows, and scenario simulations.</p>
-      <p><code>Next.js</code> <code>TypeScript</code> <code>AI</code></p>
-      <p><a href="https://github.com/surajns0033-collab/ai-stadium-os-fifa2026"><strong>View code →</strong></a> &nbsp;·&nbsp; <a href="https://ai-stadium-os.vercel.app">Live demo →</a></p>
-    </td>
-    <td width="50%" valign="top">
-      <p><sub>02 · TOOLS FOR FREELANCERS</sub></p>
-      <h3>InvoiceSort</h3>
-      <p>A receipt sorter that reads photos, categorizes expenses, and exports CSV. Receipt files stay on the device.</p>
-      <p><code>JavaScript</code> <code>OCR</code> <code>Local AI</code></p>
-      <p><a href="https://github.com/surajns0033-collab/invoicesort"><strong>View code →</strong></a> &nbsp;·&nbsp; <a href="https://surajns0033-collab.github.io/invoicesort/">Live demo →</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <p><sub>03 · PLANNING &amp; AUTOMATION</sub></p>
-      <h3>Marigold</h3>
-      <p>A celebration planner that turns event details into a budget, timeline, vendor checklist, and task plan.</p>
-      <p><code>JavaScript</code> <code>Planning</code> <code>GenAI</code></p>
-      <p><a href="https://github.com/surajns0033-collab/marigold-celebration-planner"><strong>View code →</strong></a> &nbsp;·&nbsp; <a href="https://marigold-celebration-planner.vercel.app">Live demo →</a></p>
-    </td>
-    <td width="50%" valign="top">
-      <p><sub>04 · LEARNING WITH LOCAL AI</sub></p>
-      <h3>LinguaPal</h3>
-      <p>A language tutor with conversation practice, gentle corrections, vocabulary flashcards, and spaced repetition.</p>
-      <p><code>Python</code> <code>FastAPI</code> <code>Local AI</code></p>
-      <p><a href="https://github.com/surajns0033-collab/linguapal"><strong>View code →</strong></a></p>
-    </td>
-  </tr>
-</table>
+- AI Stadium OS
+- InvoiceSort
+- Marigold
+- LinguaPal
 
 ## Contribution Arcade 🐍 🟡
 
