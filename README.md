@@ -14,9 +14,9 @@
 </p>
 
 <p>
-  <a href="mailto:suraj.n.srivastav@gmail.com"><strong>Discuss a project ↗</strong></a>
+  <a href="mailto:suraj.n.srivastav@gmail.com"><strong>Discuss a project →</strong></a>
   &nbsp; · &nbsp;
-  <a href="https://github.com/sponsors/surajns0033-collab"><strong>Sponsor my work ↗</strong></a>
+  <a href="https://github.com/sponsors/surajns0033-collab"><strong>Sponsor my work →</strong></a>
 </p>
 
 ## About Me
@@ -34,14 +34,14 @@ I enjoy experimenting with emerging technologies and building practical applicat
       <h3>AI Stadium OS</h3>
       <p>A stadium operations platform combining digital twin views, crowd monitoring, incident workflows, and scenario simulations.</p>
       <p><code>Next.js</code> <code>TypeScript</code> <code>AI</code></p>
-      <p><a href="https://github.com/surajns0033-collab/ai-stadium-os-fifa2026"><strong>View code ↗</strong></a> &nbsp;·&nbsp; <a href="https://ai-stadium-os.vercel.app">Live demo ↗</a></p>
+      <p><a href="https://github.com/surajns0033-collab/ai-stadium-os-fifa2026"><strong>View code →</strong></a> &nbsp;·&nbsp; <a href="https://ai-stadium-os.vercel.app">Live demo →</a></p>
     </td>
     <td width="50%" valign="top">
       <p><sub>02 · TOOLS FOR FREELANCERS</sub></p>
       <h3>InvoiceSort</h3>
       <p>A receipt sorter that reads photos, categorizes expenses, and exports CSV. Receipt files stay on the device.</p>
       <p><code>JavaScript</code> <code>OCR</code> <code>Local AI</code></p>
-      <p><a href="https://github.com/surajns0033-collab/invoicesort"><strong>View code ↗</strong></a> &nbsp;·&nbsp; <a href="https://surajns0033-collab.github.io/invoicesort/">Live demo ↗</a></p>
+      <p><a href="https://github.com/surajns0033-collab/invoicesort"><strong>View code →</strong></a> &nbsp;·&nbsp; <a href="https://surajns0033-collab.github.io/invoicesort/">Live demo →</a></p>
     </td>
   </tr>
   <tr>
@@ -50,14 +50,14 @@ I enjoy experimenting with emerging technologies and building practical applicat
       <h3>Marigold</h3>
       <p>A celebration planner that turns event details into a budget, timeline, vendor checklist, and task plan.</p>
       <p><code>JavaScript</code> <code>Planning</code> <code>GenAI</code></p>
-      <p><a href="https://github.com/surajns0033-collab/marigold-celebration-planner"><strong>View code ↗</strong></a> &nbsp;·&nbsp; <a href="https://marigold-celebration-planner.vercel.app">Live demo ↗</a></p>
+      <p><a href="https://github.com/surajns0033-collab/marigold-celebration-planner"><strong>View code →</strong></a> &nbsp;·&nbsp; <a href="https://marigold-celebration-planner.vercel.app">Live demo →</a></p>
     </td>
     <td width="50%" valign="top">
       <p><sub>04 · LEARNING WITH LOCAL AI</sub></p>
       <h3>LinguaPal</h3>
       <p>A language tutor with conversation practice, gentle corrections, vocabulary flashcards, and spaced repetition.</p>
       <p><code>Python</code> <code>FastAPI</code> <code>Local AI</code></p>
-      <p><a href="https://github.com/surajns0033-collab/linguapal"><strong>View code ↗</strong></a></p>
+      <p><a href="https://github.com/surajns0033-collab/linguapal"><strong>View code →</strong></a></p>
     </td>
   </tr>
 </table>
@@ -88,4 +88,4 @@ Every contribution, no matter the size, motivates me to keep building and sharin
 
 **Thank you for supporting independent development and open source!**
 
-<a href="https://github.com/sponsors/surajns0033-collab"><strong>Support my open-source work ↗</strong></a>
+<a href="https://github.com/sponsors/surajns0033-collab"><strong>Support my open-source work →</strong></a>
