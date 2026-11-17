@@ -257,7 +257,7 @@ for name, actor in actors.items():
         actor.bump(hazard)
 
 frame_count = max(len(a.frames) for a in actors.values()) + 12
-duration = frame_count * STEP_MS
+duration = (frame_count - 1) * STEP_MS
 for actor in actors.values():
     actor.pause(frame_count - len(actor.frames))
 
