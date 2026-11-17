@@ -9,8 +9,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/surajns0033-collab/surajns0033-collab/output/github-contribution-grid-snake-dark.svg?v=arcade-3" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/surajns0033-collab/surajns0033-collab/output/github-contribution-grid-snake.svg?v=arcade-3" />
-    <img alt="Snake and Pac-Man eating contribution squares, growing and bouncing through an arcade on Suraj's GitHub contribution graph" src="https://raw.githubusercontent.com/surajns0033-collab/surajns0033-collab/output/github-contribution-grid-snake.svg?v=arcade-3" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/surajns0033-collab/surajns0033-collab/output/github-contribution-grid-snake-dark.svg?v=arcade-4" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/surajns0033-collab/surajns0033-collab/output/github-contribution-grid-snake.svg?v=arcade-4" />
+    <img alt="Snake and Pac-Man eating contribution squares, growing and bouncing through an arcade on Suraj's GitHub contribution graph" src="https://raw.githubusercontent.com/surajns0033-collab/surajns0033-collab/output/github-contribution-grid-snake.svg?v=arcade-4" width="100%" />
   </picture>
 </p>
