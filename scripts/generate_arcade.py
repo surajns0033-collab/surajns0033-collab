@@ -358,8 +358,8 @@ for theme, palette in PALETTES.items():
         "@keyframes loop-fade{0%,98%{opacity:1}100%{opacity:0}}",
     ]
     root = ET.Element(f"{{{NS}}}svg", {
-        "viewBox": f"-20 -20 {columns * 16 + 40} 152",
-        "width": str(columns * 16 + 40), "height": "152",
+        "viewBox": f"-8 -20 {columns * 16 + 16} 152",
+        "width": str(columns * 16 + 16), "height": "152",
         "role": "img", "aria-label": "Growing snake and Pac-Man collecting food with hurdles and exploding bombs on GitHub contributions",
     })
     element(root, "title").text = "Suraj's contribution arcade"
@@ -368,8 +368,8 @@ for theme, palette in PALETTES.items():
     food_ids = {p: index for index, p in enumerate(food)}
     for (x, y), (day, level) in calendar.items():
         cell = element(grid, "rect", **{
-            "class": "cell", "x": x * 16 + 1, "y": y * 16 + 1,
-            "width": 14, "height": 14, "rx": 2, "ry": 2,
+            "class": "cell", "x": x * 16 + .5, "y": y * 16 + .5,
+            "width": 15, "height": 15, "rx": 2, "ry": 2,
             "fill": f"var(--c{level})", "data-date": day, "data-level": level,
         })
         if (x, y) in food_events:
