@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="title desc">
+  <title id="title">Suraj — Independent developer</title>
+  <desc id="desc">Based in India. Building AI agents, automation, and practical web applications.</desc>
+  <rect x="1" y="1" width="1198" height="218" rx="22" fill="#101827" stroke="#29374e" stroke-width="2"/>
+  <rect x="64" y="28" width="52" height="5" rx="2.5" fill="#b19aff"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="64" y="65" fill="#b3bed2" font-size="14" font-weight="600" letter-spacing="2">INDEPENDENT DEVELOPER / INDIA</text>
+    <text x="61" y="129" fill="#eef2ff" font-size="58" font-weight="700" letter-spacing="-1.5">Suraj</text>
+    <text x="64" y="172" fill="#b3bed2" font-size="23">AI agents · Automation · Practical web applications</text>
+  </g>
+  <g fill="none" stroke="#51436f" stroke-width="2">
+    <path d="M872 73H910L938 101H980"/>
+    <path d="M886 147H926L954 119H980"/>
+    <path d="M921 183V158L980 128"/>
+  </g>
+  <g fill="#b19aff">
+    <circle cx="872" cy="73" r="5"/><circle cx="886" cy="147" r="5"/><circle cx="921" cy="183" r="5"/>
+  </g>
+  <rect x="980" y="42" width="154" height="136" rx="24" fill="#221d3d" stroke="#51436f"/>
+  <text x="1057" y="136" text-anchor="middle" fill="#b19aff" font-family="Segoe UI, Arial, sans-serif" font-size="86" font-weight="700">S</text>
+</svg>
