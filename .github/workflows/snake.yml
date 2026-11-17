@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: contribution-snake
+  group: contribution-arcade
   cancel-in-progress: false
 
 jobs:
@@ -19,209 +19,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Generate the snake route from current contributions
-        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check out the arcade generator
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
-      - name: Match the contribution grid and add Pac-Man with obstacles
+      - name: Generate and validate both contribution arcade themes
         env:
           PROFILE_USER: ${{ github.repository_owner }}
         run: |
-          python3 - <<'PY'
-          from datetime import date, datetime, timedelta, timezone
-          from html.parser import HTMLParser
-          from pathlib import Path
-          from urllib.request import Request, urlopen
-          import json
-          import os
-          import random
-          import re
-          import xml.etree.ElementTree as ET
-          
-          USER = os.environ["PROFILE_USER"]
-          
-          class CalendarParser(HTMLParser):
-              def __init__(self):
-                  super().__init__()
-                  self.cells = {}
-          
-              def handle_starttag(self, tag, attrs):
-                  attrs = dict(attrs)
-                  if tag == "td" and "data-date" in attrs and "data-level" in attrs:
-                      level = int(attrs["data-level"])
-                      if level not in range(5):
-                          raise ValueError("Unexpected contribution level")
-                      self.cells[attrs["data-date"]] = level
-          
-          request = Request(
-              f"https://github.com/users/{USER}/contributions",
-              headers={"User-Agent": "contribution-arcade", "Cache-Control": "no-cache"},
-          )
-          with urlopen(request, timeout=45) as response:
-              parser = CalendarParser()
-              parser.feed(response.read().decode("utf-8"))
-          if len(parser.cells) < 350:
-              raise ValueError("GitHub did not return a complete contribution calendar")
-          
-          first = date.fromisoformat(min(parser.cells))
-          origin = first - timedelta(days=(first.weekday() + 1) % 7)
-          calendar = {}
-          for day, level in sorted(parser.cells.items()):
-              d = date.fromisoformat(day)
-              calendar[((d - origin).days // 7, (d.weekday() + 1) % 7)] = (day, level)
-          
-          NS = "http://www.w3.org/2000/svg"
-          ET.register_namespace("", NS)
-          def tag(name):
-              return f"{{{NS}}}{name}"
-          
-          def element(parent, name, **attrs):
-              return ET.SubElement(parent, tag(name), {key: str(value) for key, value in attrs.items()})
-          
-          palettes = {
-              "light": ["#eff2f5", "#aceebb", "#4ac26b", "#2da44e", "#116329"],
-              "dark": ["#151b23", "#033a16", "#196c2e", "#2ea043", "#56d364"],
-          }
-          
-          for filename, theme in [
-              ("github-contribution-grid-snake.svg", "light"),
-              ("github-contribution-grid-snake-dark.svg", "dark"),
-          ]:
-              path = Path("dist") / filename
-              tree = ET.parse(path)
-              root = tree.getroot()
-              style = root.find(tag("style"))
-              if style is None:
-                  raise ValueError("The generator did not produce animation styles")
-              css = style.text or ""
-              snakes = [e for e in root.iter(tag("rect")) if "s" in e.get("class", "").split()]
-              if not snakes or "@keyframes s0" not in css:
-                  raise ValueError("The generator did not produce a moving snake")
-              width = int(root.get("width"))
-              columns = (width // 16) - 2
-              if max(x for x, y in calendar) >= columns:
-                  raise ValueError("Calendar changed during generation; retry this workflow")
-          
-              # Protect every cell crossed by the snake, including between keyframes.
-              points = [
-                  (round(float(x) / 16), round(float(y) / 16))
-                  for x, y in re.findall(r"translate\((-?[\d.]+)px,(-?[\d.]+)px\)", css)
-              ]
-              blocked = set(points)
-              for (x1, y1), (x2, y2) in zip(points, points[1:]):
-                  if x1 == x2:
-                      blocked.update((x1, y) for y in range(min(y1, y2), max(y1, y2) + 1))
-                  elif y1 == y2:
-                      blocked.update((x, y1) for x in range(min(x1, x2), max(x1, x2) + 1))
-          
-              # Replace the grid with GitHub's public date/level snapshot and remove the bar.
-              for parent in list(root.iter()):
-                  for child in list(parent):
-                      if set(child.get("class", "").split()) & {"c", "u"}:
-                          parent.remove(child)
-              grid = element(root, "g", id="contribution-grid")
-              for (x, y), (day, level) in calendar.items():
-                  cell = element(
-                      grid, "rect", **{
-                          "class": "c", "x": x * 16 + 2, "y": y * 16 + 2,
-                          "rx": 2, "ry": 2, "data-date": day, "data-level": level,
-                          "style": "fill:var(--ce)" if level == 0 else f"fill:var(--c{level})",
-                      }
-                  )
-              # Draw the moving snake above the stationary contribution colors.
-              root.remove(grid)
-              root.insert(list(root).index(snakes[0]), grid)
-          
-              candidates = [p for p, (_, level) in calendar.items() if level == 0 and p not in blocked]
-              random.Random(33).shuffle(candidates)
-              obstacles = []
-              for p in candidates:
-                  if all(max(abs(p[0] - q[0]), abs(p[1] - q[1])) > 1 for q in obstacles):
-                      obstacles.append(p)
-                  if len(obstacles) == 22:
-                      break
-              if len(obstacles) < 12:
-                  raise ValueError("Not enough empty space for the arcade obstacles")
-          
-              for index, (x, y) in enumerate(obstacles):
-                  kind = "bomb" if index % 3 == 0 else "hurdle"
-                  obj = element(root, "g", **{
-                      "class": kind, "transform": f"translate({x * 16},{y * 16})",
-                      "data-date": calendar[(x, y)][0],
-                  })
-                  if kind == "bomb":
-                      element(obj, "circle", cx=8, cy=9, r=4.5, fill="#334155", stroke="#94a3b8", **{"stroke-width": 0.7})
-                      element(obj, "path", d="M10 5 Q13 2 12 1", fill="none", stroke="#f59e0b", **{"stroke-width": 1.2})
-                      element(obj, "path", d="M12 0V3M10.5 1.5H13.5", stroke="#fbbf24", **{"class": "spark", "stroke-width": 1})
-                      element(obj, "circle", cx=6.5, cy=7.5, r=1, fill="#cbd5e1")
-                  else:
-                      element(obj, "rect", x=2, y=4, width=2, height=10, rx=0.5, fill="#d97706")
-                      element(obj, "rect", x=12, y=4, width=2, height=10, rx=0.5, fill="#d97706")
-                      element(obj, "rect", x=1, y=4, width=14, height=3, rx=1, fill="#fb923c")
-                      element(obj, "path", d="M4 4L7 7M9 4L12 7", stroke="#fff7ed", **{"stroke-width": 1})
-          
-              pacman = element(root, "g", id="pacman")
-              element(pacman, "path", **{
-                  "class": "pac-open", "d": "M0 0L5.2 -4A6.6 6.6 0 1 0 5.2 4Z",
-                  "fill": "#facc15", "stroke": "#a16207", "stroke-width": 0.6,
-              })
-              element(pacman, "circle", **{
-                  "class": "pac-closed", "cx": 0, "cy": 0, "r": 6.6,
-                  "fill": "#facc15", "stroke": "#a16207", "stroke-width": 0.6,
-              })
-              element(pacman, "circle", cx=1, cy=-3.2, r=1, fill="#111827")
-          
-              left, right, top, bottom = -8, columns * 16 + 6, -24, 120
-              palette = palettes[theme]
-              colors = ":root{--ce:" + palette[0] + ";" + "".join(
-                  f"--c{level}:{palette[level]};" for level in range(1, 5)
-              ) + "}"
-              arcade_css = f"""
-          {colors}
-          .c{{animation:none!important}}
-          #pacman{{transform:translate({left}px,{top}px);animation:pacman-route 28s linear infinite}}
-          @keyframes pacman-route{{
-          0%{{transform:translate({left}px,{top}px) rotate(0deg)}}
-          42%{{transform:translate({right}px,{top}px) rotate(0deg)}}
-          42.001%{{transform:translate({right}px,{top}px) rotate(90deg)}}
-          50%{{transform:translate({right}px,{bottom}px) rotate(90deg)}}
-          50.001%{{transform:translate({right}px,{bottom}px) rotate(180deg)}}
-          92%{{transform:translate({left}px,{bottom}px) rotate(180deg)}}
-          92.001%{{transform:translate({left}px,{bottom}px) rotate(270deg)}}
-          100%{{transform:translate({left}px,{top}px) rotate(270deg)}}
-          }}
-          .pac-open{{animation:pac-open .24s steps(1) infinite}}
-          .pac-closed{{animation:pac-closed .24s steps(1) infinite}}
-          @keyframes pac-open{{0%,100%{{opacity:1}}50%{{opacity:0}}}}
-          @keyframes pac-closed{{0%,100%{{opacity:0}}50%{{opacity:1}}}}
-          .spark{{animation:fuse .6s steps(2) infinite}}
-          @keyframes fuse{{0%,100%{{opacity:1}}50%{{opacity:.25}}}}
-          """
-              style.text = css + arcade_css
-              root.set("viewBox", f"-16 -32 {width} 160")
-              root.set("height", "160")
-              root.set("role", "img")
-              root.set("aria-label", "Snake and Pac-Man with bombs and hurdles on the GitHub contribution calendar")
-              # Validate the actual artifact before publishing either theme.
-              actual = {e.get("data-date"): int(e.get("data-level")) for e in grid}
-              assert actual == parser.cells
-              assert not any("u" in e.get("class", "").split() for e in root.iter())
-              assert all(calendar[p][1] == 0 and p not in blocked for p in obstacles)
-              assert root.find(f".//*[@id='pacman']") is not None
-              tree.write(path, encoding="unicode")
-              print(f"{theme}: {len(actual)} matching dates, {len(obstacles)} obstacles, snake + Pac-Man, no completion bar")
-          
-          Path("dist/contribution-calendar.json").write_text(json.dumps({
-              "generated_at": datetime.now(timezone.utc).isoformat(),
-              "cells": [{"date": day, "level": level} for day, level in sorted(parser.cells.items())],
-          }, indent=2), encoding="utf-8")
-          PY
+          python3 -m py_compile scripts/generate_arcade.py
+          python3 scripts/generate_arcade.py
 
       - name: Publish the contribution arcade
         uses: crazy-max/ghaction-github-pages@1d6ee9b181a81033a16bd707a1401afa978daab4 # v5
