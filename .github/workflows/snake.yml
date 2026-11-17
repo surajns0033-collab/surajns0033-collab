@@ -79,7 +79,7 @@ jobs:
           NS = "http://www.w3.org/2000/svg"
           ET.register_namespace("", NS)
           def tag(name):
-              return f"{NS}{name}"
+              return f"{{{NS}}}{name}"
           
           def element(parent, name, **attrs):
               return ET.SubElement(parent, tag(name), {key: str(value) for key, value in attrs.items()})
