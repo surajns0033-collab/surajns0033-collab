@@ -25,13 +25,6 @@ I'm an independent developer based in India, focused on turning ideas into usefu
 
 I enjoy experimenting with emerging technologies and building practical applications that solve everyday problems.
 
-## Featured Work
-
-- AI Stadium OS
-- InvoiceSort
-- Marigold
-- LinguaPal
-
 ## Contribution Arcade 🐍 🟡
 
 <p align="center">
