@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-21T23:18:06.049772+00:00",
+  "generated_at": "2026-11-22T06:51:14.450267+00:00",
   "source": "GitHub public contribution calendar",
-  "duration_ms": 37430,
+  "duration_ms": 38000,
   "step_ms": 190,
   "smooth_samples_per_step": 4,
   "central_collision": {
@@ -9,7 +9,7 @@
       26,
       3
     ],
-    "frame": 40
+    "frame": 41
   },
   "snake_initial_length": 3,
   "snake_final_length": 6,
@@ -24,11 +24,11 @@
       "length": 4
     },
     {
-      "frame": 15,
+      "frame": 17,
       "length": 5
     },
     {
-      "frame": 21,
+      "frame": 23,
       "length": 6
     },
     {
@@ -40,27 +40,27 @@
       "length": 8
     },
     {
-      "frame": 99,
+      "frame": 95,
       "length": 5
     },
     {
-      "frame": 112,
+      "frame": 104,
       "length": 6
     },
     {
-      "frame": 114,
+      "frame": 106,
       "length": 7
     },
     {
-      "frame": 126,
+      "frame": 136,
       "length": 8
     },
     {
-      "frame": 146,
+      "frame": 157,
       "length": 5
     },
     {
-      "frame": 172,
+      "frame": 188,
       "length": 6
     }
   ],
@@ -73,52 +73,52 @@
     {
       "date": "2026-08-19",
       "actor": "snake",
-      "frame": 15
+      "frame": 17
     },
     {
       "date": "2026-09-12",
       "actor": "snake",
-      "frame": 21
+      "frame": 23
     },
     {
       "date": "2026-11-01",
       "actor": "pacman",
-      "frame": 4
+      "frame": 2
     },
     {
       "date": "2026-10-25",
       "actor": "pacman",
-      "frame": 5
+      "frame": 3
     },
     {
       "date": "2026-10-18",
       "actor": "pacman",
-      "frame": 6
+      "frame": 4
     },
     {
       "date": "2026-10-04",
       "actor": "pacman",
+      "frame": 6
+    },
+    {
+      "date": "2026-09-28",
+      "actor": "pacman",
       "frame": 8
     },
     {
-      "date": "2026-09-06",
+      "date": "2026-09-14",
+      "actor": "pacman",
+      "frame": 10
+    },
+    {
+      "date": "2026-09-07",
+      "actor": "pacman",
+      "frame": 11
+    },
+    {
+      "date": "2026-08-31",
       "actor": "pacman",
       "frame": 12
-    },
-    {
-      "date": "2026-08-23",
-      "actor": "pacman",
-      "frame": 14
-    },
-    {
-      "date": "2026-07-19",
-      "actor": "pacman",
-      "frame": 19
-    },
-    {
-      "date": "2026-06-21",
-      "actor": "pacman",
-      "frame": 23
     },
     {
       "date": "2026-10-09",
@@ -133,57 +133,57 @@
     {
       "date": "2026-10-14",
       "actor": "snake",
-      "frame": 112
+      "frame": 104
     },
     {
       "date": "2026-10-22",
       "actor": "snake",
-      "frame": 114
+      "frame": 106
     },
     {
       "date": "2026-10-31",
       "actor": "snake",
-      "frame": 126
+      "frame": 136
     },
     {
       "date": "2026-11-18",
       "actor": "snake",
-      "frame": 172
+      "frame": 188
     },
     {
-      "date": "2026-09-01",
+      "date": "2026-06-21",
       "actor": "pacman",
-      "frame": 60
+      "frame": 52
     },
     {
-      "date": "2026-08-31",
+      "date": "2026-07-19",
       "actor": "pacman",
-      "frame": 64
+      "frame": 56
     },
     {
-      "date": "2026-09-07",
+      "date": "2026-08-23",
       "actor": "pacman",
-      "frame": 73
+      "frame": 66
     },
     {
-      "date": "2026-09-14",
+      "date": "2026-09-06",
       "actor": "pacman",
-      "frame": 74
-    },
-    {
-      "date": "2026-09-28",
-      "actor": "pacman",
-      "frame": 91
+      "frame": 68
     },
     {
       "date": "2026-10-12",
       "actor": "pacman",
-      "frame": 179
+      "frame": 80
+    },
+    {
+      "date": "2026-09-01",
+      "actor": "pacman",
+      "frame": 166
     },
     {
       "date": "2026-11-17",
       "actor": "pacman",
-      "frame": 185
+      "frame": 179
     }
   ],
   "collisions": [
@@ -194,8 +194,8 @@
         26,
         3
       ],
-      "frame": 40,
-      "date": "2026-05-20"
+      "frame": 41,
+      "date": "2026-05-27"
     },
     {
       "actor": "snake",
@@ -204,82 +204,82 @@
         37,
         4
       ],
-      "frame": 78,
+      "frame": 79,
       "length_before": 7,
       "length_after": 7,
-      "date": "2026-08-06"
+      "date": "2026-08-13"
     },
     {
       "actor": "snake",
       "kind": "bomb",
       "cell": [
-        40,
-        5
+        43,
+        3
       ],
-      "frame": 99,
+      "frame": 95,
       "length_before": 8,
       "length_after": 5,
-      "date": "2026-08-28"
+      "date": "2026-09-23"
     },
     {
       "actor": "snake",
       "kind": "hurdle",
       "cell": [
-        44,
-        4
+        35,
+        3
       ],
-      "frame": 118,
+      "frame": 119,
       "length_before": 7,
       "length_after": 7,
-      "date": "2026-09-24"
+      "date": "2026-07-29"
     },
     {
       "actor": "snake",
       "kind": "bomb",
       "cell": [
-        32,
-        3
+        28,
+        5
       ],
-      "frame": 146,
+      "frame": 157,
       "length_before": 8,
       "length_after": 5,
-      "date": "2026-07-01"
+      "date": "2026-06-12"
     },
     {
       "actor": "pacman",
       "kind": "hurdle",
       "cell": [
-        42,
+        37,
         2
       ],
       "frame": 61,
       "length_before": 3,
       "length_after": 3,
-      "date": "2026-09-08"
+      "date": "2026-08-11"
     },
     {
       "actor": "pacman",
       "kind": "bomb",
       "cell": [
-        39,
+        45,
         1
       ],
-      "frame": 66,
+      "frame": 73,
       "length_before": 3,
       "length_after": 3,
-      "date": "2026-08-17"
+      "date": "2026-10-05"
     },
     {
       "actor": "pacman",
       "kind": "hurdle",
       "cell": [
-        36,
-        1
+        48,
+        2
       ],
-      "frame": 81,
+      "frame": 83,
       "length_before": 3,
       "length_after": 3,
-      "date": "2026-07-27"
+      "date": "2026-10-27"
     },
     {
       "actor": "pacman",
@@ -288,41 +288,13 @@
         6,
         1
       ],
-      "frame": 132,
+      "frame": 127,
       "length_before": 3,
       "length_after": 3,
-      "date": "2025-12-29"
+      "date": "2026-01-05"
     }
   ],
   "cells": [
-    {
-      "date": "2025-11-16",
-      "level": 0
-    },
-    {
-      "date": "2025-11-17",
-      "level": 0
-    },
-    {
-      "date": "2025-11-18",
-      "level": 0
-    },
-    {
-      "date": "2025-11-19",
-      "level": 0
-    },
-    {
-      "date": "2025-11-20",
-      "level": 0
-    },
-    {
-      "date": "2025-11-21",
-      "level": 0
-    },
-    {
-      "date": "2025-11-22",
-      "level": 0
-    },
     {
       "date": "2025-11-23",
       "level": 0
@@ -1777,6 +1749,10 @@
     },
     {
       "date": "2026-11-21",
+      "level": 0
+    },
+    {
+      "date": "2026-11-22",
       "level": 0
     }
   ]
