@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-27T02:12:05.876528+00:00",
+  "generated_at": "2026-11-27T10:53:09.290687+00:00",
   "source": "GitHub public contribution calendar",
-  "duration_ms": 38000,
+  "duration_ms": 38380,
   "step_ms": 190,
   "smooth_samples_per_step": 4,
   "central_collision": {
@@ -12,8 +12,8 @@
     "frame": 41
   },
   "snake_initial_length": 3,
-  "snake_final_length": 6,
-  "snake_peak_length": 8,
+  "snake_final_length": 9,
+  "snake_peak_length": 9,
   "snake_growth": [
     {
       "frame": 0,
@@ -60,8 +60,20 @@
       "length": 5
     },
     {
-      "frame": 188,
+      "frame": 187,
       "length": 6
+    },
+    {
+      "frame": 188,
+      "length": 7
+    },
+    {
+      "frame": 189,
+      "length": 8
+    },
+    {
+      "frame": 190,
+      "length": 9
     }
   ],
   "food": [
@@ -146,9 +158,24 @@
       "frame": 136
     },
     {
-      "date": "2026-11-18",
+      "date": "2026-11-27",
+      "actor": "snake",
+      "frame": 187
+    },
+    {
+      "date": "2026-11-26",
       "actor": "snake",
       "frame": 188
+    },
+    {
+      "date": "2026-11-25",
+      "actor": "snake",
+      "frame": 189
+    },
+    {
+      "date": "2026-11-18",
+      "actor": "snake",
+      "frame": 190
     },
     {
       "date": "2026-06-21",
@@ -1765,15 +1792,15 @@
     },
     {
       "date": "2026-11-25",
-      "level": 0
+      "level": 1
     },
     {
       "date": "2026-11-26",
-      "level": 0
+      "level": 4
     },
     {
       "date": "2026-11-27",
-      "level": 0
+      "level": 2
     }
   ]
 }
